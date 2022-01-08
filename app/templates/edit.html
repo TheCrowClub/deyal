@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+      {% if data %}
+      <section id="write">
+      <form method="POST" action="" style="padding: 30px;">
+        <div class="form-outline mb-4 justify-content-center">
+          <label for="writebox" class="form-label">আপনার কথাবার্তা লিখুন...</label>
+          <textarea class="form-control" placeholder="আপনি যা লিখতে চান লিখে ফেলুন..." name="writebox" id="writebox" rows="3">{{ data.post }}</textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">আপনার ছদ্মনাম (ঐচ্ছিক)</label>
+          <input type="name" name="author" class="form-control" value="{{ data.author }}">
+        </div>
+        <button type="submit" class="btn btn-primary">লিখুন</button>
+      </form>
+      </section>
+      {% else %}
+      <br><br>
+      <section id="write">
+      <form method="post" action="" style="padding: 40px;">
+        <div class="mb-3">
+          <label class="form-label" align="center">Your Secret</label>
+          <input type="name" name="secret" class="form-control" align=center>
+        </div>
+        <button type="submit" class="btn btn-primary" align="center">Edit</button>
+      </form>
+      </section>
+
+      {% endif %}
+
+
+    </div>
+
+</header>
+{% endblock %}

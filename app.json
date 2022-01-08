@@ -1,0 +1,11 @@
+{
+  "name":"Deyal",
+  "repository":"https://github.com/rozari0/deyal/",
+  "stack":"container",
+  "env":{
+    "MONGODB-URI":{
+      "description":"MONGODB URI",
+      "requierd":true
+    }
+  }
+}

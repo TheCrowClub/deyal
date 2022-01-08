@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block body %}
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">দেয়াল</h1>
+            <h2 class="masthead-subheading mb-0">সুবোধের দেয়াল।</h2>
+            <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#write">লিখুন</a>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+<section id="alert">
+  {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+      <div class="alert alert-success" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endwith %}
+</section>
+<section id="write">
+<form method="post" action="" style="padding: 30px;">
+  <div class="form-outline mb-4 justify-content-center">
+    <label for="writebox" class="form-label">আপনার কথাবার্তা লিখুন...</label>
+    <textarea class="form-control" placeholder="আপনি যা লিখতে চান লিখে ফেলুন..." name="writebox" id="writebox" rows="3" required></textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">আপনার ছদ্মনাম (ঐচ্ছিক)</label>
+    <input type="name" name="author" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">লিখুন</button>
+</form>
+</section>
+
+{% endblock %}
